@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>lowercase | reuben schrader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <!-- local js -->
+    <script type="text/javascript" src="static/main.js"></script>
+
+    <!-- local css -->
+    <link rel="stylesheet" type="text/css" href="/static/override.css">
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

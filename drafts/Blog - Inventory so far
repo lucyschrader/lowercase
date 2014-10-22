@@ -1,0 +1,61 @@
+Blog - Inventory part 1
+
+Title: Making inventory
+Summary: 
+
+# Decidedly unfinished
+
+# I hate maintaining spreadsheets
+We had an inventory of sorts - an excel spreadsheet with a list of pages, and a few extra fields that may or may not have been filled in. Pretty quickly laziness (or, I prefer, the complexity of adding spreadsheet updating through a clunky DMS to an already multi-step workflow) struck, and the inventory fell out of date.
+
+Plus, I didn't just want a list of pages. I dreamed of a site with regularly maintained and updated content, where it was easy to find out who looked after a page and a handy little alert would go off if something needed changing. I dreamed of functions.
+
+Around the same time, I was finally getting my head around coding for the first time. I'd had a ten-minute intro to Python from @fogonwater, and Learn Python the Hard Way was showing me that functions could do things to variables. Amazing!
+
+def mind_blown():
+    for synapse in mind:
+        print "Blown!"
+
+Flask and the DigitalNZ API were the last puzzle pieces that made me think I could make this thing myself. The former deals with the actual running of a website, taking a bunch of backend stuff off my plate, and the latter gave me a sneaky way to steal some existing harvesting work.
+
+# From beginning to... partway through
+Though you could say I've been building this in an Agile way, it's really just messy.
+
+It's been a series of identifying things I want to do and working out how to do them, across pretty much all aspects. How do I present a subset of my data on a page? What information needs to be in each row? How can I use a whole series of modals in Bootstrap? Why are there no good js datepickers?
+
+From the get-go, many of the main ideas were there, based on what I'd learned from content strategy people like Kristina Halvorson, Karen McGrane, and Erin Kissane. Who's the owner, the main contact? When was this updated, and when does it need looking at?
+
+homepage-13feb
+
+Early on, I also wanted to manually add pages, in case the harvester missed them, I suppose. I've pretty much given that idea away, because it can be done in the MongoDB shell, and if the harvester isn't picking something up, the harvester needs fixing.
+
+newpageform-13feb
+
+Again thanks to absorbing everything content strategists have to say, I was determined to get real data into the system as quickly as possible. Working with real data means you're designing for the real problems you'll face. I didn't have a proper database set up at this time, so I chucked a small set of results from the DigitalNZ API into a json file, and read from that.
+
+dummydata-15feb
+
+Once that was in place, I made some quick progress, including adding DataTables (which allows live search), and a view that was restricted to pages that needed details added.
+
+homepage-6mar
+homepagefilter-6mar
+
+After this I got both my database and harvest up and running - a local install of mongodb made a good place to stash the information I was pulling from DigitalNZ. I also felt terribly off-brand, and indulged in a little redesign based on elements from natlib.govt.nz.
+
+homepage-11mar
+
+I'd tried doing in-line editing back in the blue-and-white days, but couldn't get the hang of it. Now, using X-Editable, I was able to plug it in, giving me a much easier way to fill in the gaps in the data.
+
+homepage-22mar
+
+That right there is the makings of a pretty decent inventory, but it doesn't really set us up for any kind of maintenance or auditing. Cue me picking new, harder problems to tackle.
+
+Here, I take a go at adding a manual update date/note modal for each listing - the idea being to then have something ping off when it's time to update it, along with the info you need. I still think I need this, alongside a regular maintenance cycle, but I don't think it's the way to handle it.
+
+updatemodal-26mar
+
+And that's pretty much as far as I've gotten. Now I need to decide if I want to work on a generic, reusable inventory-only app, or keep pushing through the harder problems to create the full inventory/maintenance/audit app for work.
+
+Recently, I've also had a go restarting from scratch. One, I want to to actually use classes in my code, and two, I'd had AngularJS recommended and wanted to see if it'd suit my purposes better than DataTables.
+
+It's early days, but changing from a regular table to expandable divs is promising so far. Guess I have to learn javascript.

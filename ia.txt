@@ -1,0 +1,6 @@
+HOME
+|- Blog
+|-- Blog posts
+|- Makings (inc minor makings)
+|-- Major makings
+|- CV (one-pager, link elsewhere as needed)

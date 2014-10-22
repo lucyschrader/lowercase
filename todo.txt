@@ -1,0 +1,26 @@
+Writing
+* Blog post - Pygame infection gifs
+* Blog post - Trying out Unity
+* Blog post - inventory part 1
+* Blog post - fuck gamergate
+* Making post - thesis
+* Making post - cardigan
+* Making post - inventory so far
+* CV
+
+Design
+* General look n feel
+* Blog landing page layout
+* Making landing page layout
+* CV layout
+
+UX
+* Gifs play on click
+
+Backend
+* Edit existing page
+* Blog tags
+* Making categories
+* Datestamp content
+* Authentication and admin views
+* Avoid url conflicts

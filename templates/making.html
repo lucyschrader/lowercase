@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-md-8">
+        {% for post in posts %}
+        <div class="col-md-4">
+            <h2>{{post.title}}</h2>
+            <p><img src="/static/images/red.png" width="100%" /></p>
+            <p>{{post.summary}}</p>
+        </div>
+        {% endfor %}
+        </div>
+        <div class="col-md-4">
+        <h2>What I use</h2>
+            <p>Thanks to all this stuff, I'm able to make the things I make.</p>
+            <h3>Knitting</h3>
+            <ul class="list-unstyled">
+                <li>Yarn from Holland Road</li>
+                <li>Patterns from Ravelry</li>
+            </ul>
+            <h3>Coding</h3>
+            <ul class="list-unstyled">
+                <li>Learn Python the Hard Way and Codecademy</li>
+                <li>Flask</li>
+                <li>Bootstrap</li>
+            </ul>
+            <h3>Hard and software</h3>
+            <ul class="list-unstyled">
+                <li>MacBook Air</li>
+                <li>Sublime Text 2</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
