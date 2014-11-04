@@ -1,17 +1,10 @@
 {% include 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="col-md-9">
-    <p>A whole lot of interesting content</p>
+<div class="container text-center">
+    <p class="intro">I do some blogging</p>
     {% for post in posts %}
     <h2>{{post.title}}</h2>
-    <p>{{post.summary}}</p>
+    <p>{{post.summary}} <span class="text-right"><a href="/post/{{post.url_slug}}" class="readmore">go go go</a></span></p>
     {% endfor %}
-    </div>
-    <div class="col-md-3">
-        <p><img src="/static/images/red.png" width="100%" class="img-rounded" /></p>
-        <p>Reuben is super great. He's known for this and that, plus some other things.</p>
-        <p>editing / content strategy / python / knitting / my cat / tasty food / lists</p>
-    </div>
 </div>
 {% endblock %}

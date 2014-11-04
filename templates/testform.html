@@ -1,28 +1,60 @@
 {% include 'base.html' %}
 {% block content %}
 <div class="container">
+{% if post == false %}
 <h2>Create a post!</h2>
-    <form method="POST" action="" name="newpost">
-        {{ form.hidden_tag() }}
+{% else %}
+<h2>Edit "{{post.title}}"!</h2>
+{% endif %}
+    <form class="form-horizontal" method="POST" action="" name="newpost">
         <div class="form-group">
-            <label for="title">Page title: </label>
-                {{ form.title(size=80, placeholder="Dangit") }}
-                |
-            <label for="page_type">Page type: </label>
-                {{form.page_type}}
-                |
-            <label for="author">Author: </label>
-                {{form.author(size=20)}}
+            <label for="title" class="col-md-2 control-label">Title:</label>
+            <div class="col-md-10">
+                <input class="form-control" name="title" value="{{post.title}}">
+            </div>
         </div>
         <div class="form-group">
-            <label for="summary">Summary: </label>
-                {{ form.summary(size=80) }}
+            <label for="summary" class="col-md-2 control-label">Summary:</label>
+            <div class="col-md-10">
+                <input class="form-control" name="summary" value="{{post.summary}}">
+            </div>
         </div>
         <div class="form-group">
-            <label for="body">Page body: </label>
-                {{ form.body }}
+            <label for="body" class="col-md-2 control-label">Page body:</label>
+            <div class="col-md-10">
+                <textarea class="form-control" rows="10" name="body">{{post.body}}</textarea>
+            </div>
         </div>
-        <input type="submit" value="Post!">
+        <div class="form-group">
+            <label for="page_type" class="col-md-2 control-label">Page type:</label>
+            <div class="col-md-4">
+                <select class="form-control" name="page_type" value="{{post.page_type}}">
+                {% for type in page_types %}
+                <option>{{type}}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="author" class="col-md-2 control-label">Author:</label>
+            <div class="col-md-4">
+                <input class="form-control" name="author" value="{{post.author}}">
+            </div>
+        </div>
+        <div class="form-group">
+        <h3>Related links</h3>
+        <div class="col-md-2">
+        </div>
+            <label for="rel_link1" class="control-label sr-only">Related link</label>
+            <div class="col-md-4">
+                <input class="form-control" name="rel_link1" value="{{post.rel_link1}}" placeholder="Related link">
+            </div>
+            <label for="rel_title1" class="control-label sr-only">Link title</label>
+            <div class="col-md-4">
+                <input class="form-control" name="rel_title1" value="{{post.rel_title1}}" placeholder="Link title">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">Save!</button>
     </form>
 </div>
 {% endblock %}

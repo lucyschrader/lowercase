@@ -3,11 +3,20 @@
 <div class="container">
     <h2>All them pages</h2>
     {% for page in pages %}
-    <ul class="list-inline">
-        <li><a href="/post/{{page.url_slug}}" target="_blank">{{page.title}}</a></li>|
-        <li>{{page.summary}}</li>|
-        <li>{{page.page_type}}</li>
-    </ul>
+    <div class="row">
+    <div class="col-md-4">
+        <p><a href="/post/{{page.url_slug}}" target="_blank">{{page.title}}</a></p>
+    </div>
+    <div class="col-md-4">
+        <p>{{page.summary}}</p>
+    </div>
+    <div class="col-md-1">
+        <p>{{page.page_type}}</p>
+    </div>
+    <div class="col-md-3">
+        <p><a href="/post/{{page.url_slug}}/edit"><span class="glyphicon glyphicon-pencil"></span></a> | <span class="glyphicon glyphicon-remove"></span></p>
+    </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

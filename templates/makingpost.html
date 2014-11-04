@@ -3,15 +3,13 @@
 <div class="container">
 <div class="col-md-9">
     <h2>{{post.title}}</h2>
-    <p>{{post.author}} | {{post.publication_time.day}}/{{post.publication_time.month}}/{{post.publication_time.year}}</p>
+    <p>{{post.author}} | DATESTAMP</p>
     <p>{{post.body |safe}}</p>
 </div>
 <div class="col-md-3 text-right">
     <h2>More on this</h2>
     <ul class="list-unstyled">
-    {% if post.rel_link1 %}
-        <li><a href="{{post.rel_link1}}" target="_blank">{{post.rel_title1}}</a></li>
-    {% endif %}
+        <li><a href="#" target="_blank">Add awesome related links here</a></li>
     </ul>
 </div>
 </div>
